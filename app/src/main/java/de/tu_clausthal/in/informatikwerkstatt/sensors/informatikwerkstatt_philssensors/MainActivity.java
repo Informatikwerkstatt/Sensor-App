@@ -61,18 +61,18 @@ public class MainActivity extends AppCompatActivity implements ILocationListener
 
     @Override
     public void accelerometer(final Number p_xaxis, final Number p_yaxis, final Number p_zaxis) {
-        ((TextView)findViewById(R.id.text_accelerometer_xvalue)).setText( p_xaxis.intValue() == 0 ? getResources().getString(R.string.nullnumber) : MessageFormat.format( "{0,number, #.#####}", p_xaxis ) );
-        ((TextView)findViewById(R.id.text_accelerometer_yvalue)).setText( p_yaxis.intValue() == 0 ? getResources().getString(R.string.nullnumber) : MessageFormat.format( "{0,number, #.#####}", p_yaxis ) );
-        ((TextView)findViewById(R.id.text_accelerometer_zvalue)).setText( p_zaxis.intValue() == 0 ? getResources().getString(R.string.nullnumber) : MessageFormat.format( "{0,number, #.#####}", p_zaxis ) );
+        ((TextView)findViewById(R.id.text_accelerometer_xvalue)).setText( p_xaxis.intValue() == 0 ? this.getString( R.string.nullnumber ) : MessageFormat.format( this.getString( R.string.numberformat ), p_xaxis ) );
+        ((TextView)findViewById(R.id.text_accelerometer_yvalue)).setText( p_yaxis.intValue() == 0 ? this.getString( R.string.nullnumber ) : MessageFormat.format( this.getString( R.string.numberformat ), p_yaxis ) );
+        ((TextView)findViewById(R.id.text_accelerometer_zvalue)).setText( p_zaxis.intValue() == 0 ? this.getString( R.string.nullnumber ) : MessageFormat.format( this.getString( R.string.numberformat ), p_zaxis ) );
     }
 
     @Override
     public void location(final Number p_latitude, final Number p_longitude, final Number p_altitude, final Number p_speed, final Number p_distance) {
-        ((TextView)findViewById(R.id.text_gps_longitudevalue)).setText( p_longitude.intValue() == 0 ? getResources().getString(R.string.nullnumber) : MessageFormat.format( "{0,number, #.#####}", p_longitude ) );
-        ((TextView)findViewById(R.id.text_gps_latitudevalue)).setText( p_latitude.intValue() == 0 ? getResources().getString(R.string.nullnumber) : MessageFormat.format( "{0,number, #.#####}", p_latitude ) );
+        ((TextView)findViewById(R.id.text_gps_longitudevalue)).setText( p_longitude.intValue() == 0 ? this.getString( R.string.nullnumber ) : MessageFormat.format( this.getString( R.string.numberformat ), p_longitude ) );
+        ((TextView)findViewById(R.id.text_gps_latitudevalue)).setText( p_latitude.intValue() == 0 ? this.getString( R.string.nullnumber ) : MessageFormat.format( this.getString( R.string.numberformat ), p_latitude ) );
 
-        ((TextView)findViewById(R.id.text_gps_altitudevalue)).setText( p_altitude.intValue() == 0 ? getResources().getString(R.string.nullnumber) : MessageFormat.format( "{0,number, #.#####}", p_altitude ) );
-        ((TextView)findViewById(R.id.text_gps_speedvalue)).setText( p_speed.intValue() == 0 ? getResources().getString(R.string.nullnumber) : MessageFormat.format( "{0,number, #.#####}", p_speed ) );
-        ((TextView)findViewById(R.id.text_gps_distancevalue)).setText( p_distance.intValue() == 0 ? getResources().getString(R.string.nullnumber) : MessageFormat.format( "{0,number, #.#####}", p_distance ) );
+        ((TextView)findViewById(R.id.text_gps_altitudevalue)).setText( p_altitude.intValue() == 0 ? this.getString( R.string.nullnumber ) : MessageFormat.format( this.getString( R.string.numberformat ), p_altitude ) );
+        ((TextView)findViewById(R.id.text_gps_speedvalue)).setText( p_speed.intValue() == 0 ? this.getString( R.string.nullnumber ) : MessageFormat.format( this.getString( R.string.numberformat ), p_speed ) );
+        ((TextView)findViewById(R.id.text_gps_distancevalue)).setText( p_distance.intValue() == 0 ? this.getString( R.string.nullnumber ) : MessageFormat.format( this.getString( R.string.numberformat ), p_distance ) );
     }
 }
